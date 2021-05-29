@@ -2,7 +2,7 @@
 
 ##  Requirements
 - Node js installed, at least version `v10.22.1`:
-    - (https://nodejs.org/en/)[https://nodejs.org/en/] 
+    - [https://nodejs.org/en/](https://nodejs.org/en/)
 
 ## Installation
 Install node js on you machine, then run in the root of the repo:
