@@ -12,7 +12,7 @@ const readline = require('readline').createInterface({
 });
 
 async function Program(){
-    var {crawlUrl, termToChange, port, crawlingInterval, terminalModeEnabled, pushBulletToken} = require("./settings");
+    var {crawlUrl, termToChange, port, crawlingInterval, terminalModeEnabled, pushBulletToken, notification} = require("./settings");
     /**
      * @type {PushBullet}
      */
@@ -55,9 +55,9 @@ async function Program(){
     });
 
     const pageChangedNotification = {
-        title: 'NHS page updated',
-        subtitle: 'NHS page updated',
-        message: 'Click to go there!',
+        title: notification.title,
+        subtitle: notification.title,
+        message: notification.message,
         wait: true,
         sound: true,
         timeout: 10
@@ -118,7 +118,7 @@ async function Program(){
     });
 
     server.listen(port, hostname, () => {
-        console.log("Crawler started...");
+        console.log(`Crawler started listening to '${crawlUrl}'...`.green);
         crawl();
         console.log(`Searching for '${termToChange}'...\n`);
         if(terminalModeEnabled){
